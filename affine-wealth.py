@@ -18,8 +18,8 @@ initialBalance = 100.0
 lossFraction = 0.99
 winFraction = 1.01
 nPlayers = 200
-nRounds = 3000
-maxTransaction = 100
+nRounds = 1000
+maxTransaction = 1000
 minTransaction = 1
 
 
@@ -69,6 +69,10 @@ def doSimulation():
 #                 players[transactionNumber].transaction(players[transactionNumber2])
             participants = random.sample(players, 2)
             participants[0].transaction(participants[1])
+            
+        # Payday!!!! - Wealth is created from nowhere!
+        #for player in players: 
+        #    player.balance *= 1.01
          
         print(f"After round {roundNumber}. Ordered transactions {Player.orderedTransactions}, results: {','.join(str(p) for p in players)}")
 
